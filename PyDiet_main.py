@@ -35,14 +35,21 @@ while resposta != '0':
     elif resposta == '3':
         resposta_nu = ''
         while resposta_nu != '0':
-            print('##############################################################################')
-            print('##  O que você quer fazer?                                                  ##')
-            print('##  Selecione uma das opções a seguir                                       ##')
-            print('##  1 - Cálculo de IMC                                                      ##')
-            print('##  2 - Cáculo de metabolismo basal (TMB) e gasto energético total (GET)    ##') 
-            print('##  3 - Cálculo de percentual de gordura corporal                           ##')
-            print('##  4 - Planejamento de dieta                                               ##')
-            print('##  0 - Voltar ao menu principal                                            ##')
+            print('#############################################################################################')
+            print('##  Este é o mais novo NutriPlan AI!                                                    #####')
+            print('##                                                                                      #####')
+            print('##  O NutriPlan AI é uma ferramenta de apoio ao planejamento nutricional                #####')
+            print('##  que realiza cálculos como IMC, percentual de gordura, Taxa de metabolismo basal e   #####')
+            print('##  gasto energético total, além de auxiliar na elaboração de dietas personalizadas     #####')
+            print('##  com base nas necessidades do paciente                                               #####')  
+            print('##                                                                                      #####')
+            print('##  O que você quer fazer?                                                                 ##')
+            print('##  Selecione uma das opções a seguir                                                      ##')
+            print('##  1 - Cálculo de IMC                                                                     ##')
+            print('##  2 - Cáculo de metabolismo basal (TMB) e gasto energético total (GET)                   ##') 
+            print('##  3 - Cálculo de percentual de gordura corporal                                          ##')
+            print('##  4 - Planejamento de dieta                                                              ##')
+            print('##  0 - Voltar ao menu principal                                                           ##')
             resposta_nu = input('## Escolha a sua opcão: ')
             print()
 
@@ -51,6 +58,13 @@ while resposta != '0':
 
             elif resposta_nu == '2':
                 mtb_get(pacientes)
+
+            elif resposta_nu == '0':
+                print()
+
+            else:
+                print('Opção inválida, escolha alguma da opções de 0 a 4!')
+                print()
     
     elif resposta == '0':
         print('###################################')
