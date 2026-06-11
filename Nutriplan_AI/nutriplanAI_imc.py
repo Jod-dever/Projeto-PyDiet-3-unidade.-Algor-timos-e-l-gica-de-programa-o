@@ -87,8 +87,8 @@ def imc (pacientes):
                 print('### pois seu IMC é igual a {:.1f}.'.format(imc))
                 print()
 
-            elif resposta_imc == '0':
+        elif resposta_imc == '0':
                 print()
                     
-            else:
+        else:
                 print('Resposta inválida!')
