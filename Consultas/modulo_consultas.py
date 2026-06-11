@@ -52,8 +52,8 @@ def moduloconsultas(consultas):
             print()
             nome = input('Qual o nome do paciente que deseja atualizar? ').lower()
             if nome in consultas:
-                resposta_con1 = ''
-                while resposta_con1 != '0':
+                resposta_con_at = ''
+                while resposta_con_at != '0':
                     print('####################################################')
                     print('##  O que você quer atualizar?            ##########')
                     print('##  Selecione uma das opções a seguir     ##########')
@@ -63,10 +63,10 @@ def moduloconsultas(consultas):
                     print('##  4 - Data de nascimento do paciente            ##')
                     print('##  5 - Dia da consulta                           ##')
                     print('##  0 - Voltar ao menu das consultas              ##')
-                    resposta_con1 = input('## Escolha a sua opção: ')
+                    resposta_con_at = input('## Escolha a sua opção: ')
                     print()
 
-                    if resposta_con1 == '1':
+                    if resposta_con_at == '1':
                         novo_nome = input('Novo nome do paciente: ').lower()
                         consultas[novo_nome] = consultas[nome]
                         del consultas[nome]
@@ -74,27 +74,27 @@ def moduloconsultas(consultas):
                         print('Nome do paciente atualizado com sucesso!')
                         print()
                     
-                    elif resposta_con1 == '2':
+                    elif resposta_con_at == '2':
                         consultas[nome]['telefone'] = input('Novo telefone: ')
                         print('Telefone do paciente atualizado com sucesso!')
                         print()
                   
-                    elif resposta_con1 == '3':
+                    elif resposta_con_at == '3':
                         consultas[nome]['email'] = input('Novo Email: ')
                         print('Email do paciente atualizado com sucesso!')
                         print()
                   
-                    elif resposta_con1 == '4':
+                    elif resposta_con_at == '4':
                         consultas[nome]['data_nascimento'] = input('Nova data de nascimento: ')
                         print('Data de nascimento do paciente atualizado com sucesso!')
                         print()
                   
-                    elif resposta_con1 == '5':
+                    elif resposta_con_at == '5':
                         consultas[nome]['dia_consulta'] = input('Novo dia da consulta: ')
                         print('Consulta do paciente atualizada com sucesso!')
                         print()
                   
-                    elif resposta_con1 == '0':
+                    elif resposta_con_at == '0':
                         print()
 
                     else:
