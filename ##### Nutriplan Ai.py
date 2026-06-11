@@ -10,7 +10,7 @@ from datetime import datetime
 
 pacientes = {
     'joão augusto': {
-        'telefone': '99999-1111',
+        'telefone': '99999-0000',
         'email': 'joaoaugusto@ufrn.edu.br',
         'idade': '21',
         'data_nascimento': '22/10/2005',
