@@ -1,155 +1,157 @@
 ##### Um sistema de planejamento de dieta #####
-lista_nomes = ['João Augusto','José','Artur','Joan','Lucas']
-lista_telefones = ['99999-1111', '99999-2222', '99999-3333', '99999-4444', '99999-5555']
-lista_emails = ['joaoaugusto@ufrn.edu.br','jose@ufrn.edu.br','artur@ufrn.edu.br','joan@ufrn.edu.br','lucas@ufrn.edu.br']
-lista_dia_nasc = ['22/10/2005','30/03/2008','12/06/2007','03/04/2005','09/08/2006']
-lista_peso = ['93.3','98','80.7','87','90']
-lista_obj = ['Emagrecimento','Emagrecimento','Ganho de massa muscular','Ganho de massa muscular','Manter o peso']
-
-
-
-
+from modulodicionarios import dicionarios_pacientes,dicionario_consultas
+pacientes = dicionarios_pacientes()
+consultas = dicionario_consultas()
 resposta = ''
 
 while resposta != '0':
-  print('####################################################')
-  print('#####  Seja bem vindo ao PyDiet                #####')
-  print('#####  O seu sistema de planejamento de dietas #####')
-  print('####################################################')
-  print('##  Selecione uma das opções a seguir ##############')
-  print('##  1 - Pacientes           ##')
-  print('##  2 - NutriPlan AI        ##')
-  print('##  3 - Consultas           ##')
-  print('##  4 - Relatórios          ##')
-  print('##  5 - Sobre o sistema     ##')
-  print('##  0 - Sair                ##')
-  resposta = input('##  Escolha sua opção: ')
-  print()
+   print('####################################################')
+   print('#####  Seja bem vindo ao PyDiet                #####')
+   print('#####  O seu sistema de planejamento de dietas #####')
+   print('####################################################')
+   print('##  Selecione uma das opções a seguir ##############')
+   print('##  1 - Pacientes           ##')
+   print('##  2 - NutriPlan AI        ##')
+   print('##  3 - Consultas           ##')
+   print('##  4 - Relatórios          ##')
+   print('##  5 - Sobre o sistema     ##')
+   print('##  0 - Sair                ##')
+   resposta = input('##  Escolha sua opção: ')
+   print()
   
-  if resposta == '1':
-    resposta1 = ''  
-    while resposta1 != '0':
-      print('####################################################')
-      print('##  O que você quer fazer?            ##############')
-      print('##  Selecione uma das opções a seguir ##############')
-      print('##  1 - Cadastrar Paciente            ##')
-      print('##  2 - Informações sobre paciente    ##')
-      print('##  3 - Atualizar paciente            ##')
-      print('##  4 - Excluir paciente              ##')
-      print('##  0 - Voltar ao menu                ##')
-      resposta1 = input('## Escolha a sua opcão: ')
+   if resposta == '1':
+      resposta1 = ''  
+      while resposta1 != '0':
+         print('####################################################')
+         print('##  O que você quer fazer?            ##############')
+         print('##  Selecione uma das opções a seguir ##############')
+         print('##  1 - Cadastrar Paciente            ##')
+         print('##  2 - Informações sobre paciente    ##')
+         print('##  3 - Atualizar paciente            ##')
+         print('##  4 - Excluir paciente              ##')
+         print('##  0 - Voltar ao menu principal      ##')
+         resposta1 = input('## Escolha a sua opcão: ')
+         print()
+      
+         if resposta1 == '1':
+            print('Cadastro de paciente no sistema')
+            print()
+            nome = input('Nome do paciente: ').lower()
+            telefone = input('Telefone: ')
+            email = input('E-mail: ')
+            data_nascimento = input('Data de nascimento: ')
+            peso = input('Peso do paciente em kg: ')
+            objetivo = input('Objetivo do paciente: ')
+            pacientes[nome] = {
+               'telefone': telefone,
+               'email': email,
+               'data_nascimento': data_nascimento,
+               'peso': peso,
+               'objetivo': objetivo
+            }
+            print('Paciente cadastrado com sucesso!')
+            print()
+          
+         elif resposta1 == '2':
+            print()
+            print('Informações do paciente no sistema')
+            print()
+            nome = input('Qual o nome do paciente? ').lower()
+            print()
+            
+            if nome in pacientes:
+               print('Nome:', nome.title())
+               print('Telefone:', pacientes[nome]['telefone'])
+               print('Email:', pacientes[nome]['email'])
+               print('Data de nascimento:', pacientes[nome]['data_nascimento'])
+               print('Peso:', pacientes[nome]['peso'])
+               print('Objetivo:', pacientes[nome]['objetivo'])
+               print()
+            else:
+               print('Paciente não encontrado.')
+               print()
+         
+         elif resposta1 == '3':
+            print()
+            print('Atualização de cadastro de paciente no sistema')
+            print()
+            nome = input('Qual o nome do paciente que deseja atualizar? ').lower()
+            print()
+            if nome in pacientes:
+               resposta2 = ''
+               while resposta2 != '0':
+                  print('####################################################')
+                  print('##  O que você quer atualizar?            ##########')
+                  print('##  Selecione uma das opções a seguir ##############')
+                  print('##  1 - Nome do paciente                          ##')
+                  print('##  2 - Telefone do paciente                      ##')
+                  print('##  3 - Email do paciente                         ##')
+                  print('##  4 - Data de nascimento do paciente            ##')
+                  print('##  5 - Peso do paciente                          ##')
+                  print('##  6 - Objetivo do paciente                      ##')
+                  print('##  0 - Voltar ao menu dos pacientes              ##')
+                  resposta2 = input('## Escolha a sua opção: ')
+                  print()
 
-      if resposta1 == '1':
-         print()
-         print('Cadastro de paciente no sistema')
-         print()
-         nome  = input('Nome do paciente: ')
-         telefone  = input('Telefone: ')
-         email = input('E-mail: ')
-         dia_nasc = input('Data de nascimento  : ')
-         peso = input('Peso do paciente em kg:')
-         obj = input('Objetivo do paciente: ')
-         lista_nomes += [nome]
-         lista_telefones += [telefone]
-         lista_dia_nasc += [dia_nasc]
-         lista_emails += [email]
-         lista_peso += [peso]
-         lista_obj += [obj]
-         print()
-         print('O paciente foi cadastrado com sucesso!')
-         print()
-      
-      elif resposta1 == '2':
-         print()
-         print('Informações do paciente no sistema')
-         print()
-         nome = input('Qual o nome do paciente que você deseja visualizar? ')
-         tamanho = len(lista_nomes)
-         posicao = 0
-         achou = False
-         while (posicao < tamanho) and (not achou):
-          if nome == lista_nomes[posicao]:
-            achou = True
-          else:
-            posicao += 1
-         if achou:
-           print('Nome:', lista_nomes[posicao])
-           print('Telefone:', lista_telefones[posicao])
-           print('Data de nascimeto:', lista_dia_nasc[posicao])
-           print('Email:', lista_emails[posicao])
-           print('Peso:', lista_peso[posicao])
-           print('Objetivo:',lista_obj[posicao])
-           print()
-         else:
+                  if resposta2 == '1':
+                     novo_nome = input('Novo nome do paciente: ').lower()
+                     pacientes[novo_nome] = pacientes[nome]
+                     del pacientes[nome]
+                     nome = novo_nome
+                     print('Nome do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta2 == '2':
+                     pacientes[nome]['telefone'] = input('Novo telefone: ')
+                     print('Telefone do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta2 == '3':
+                     pacientes[nome]['email'] = input('Novo Email: ')
+                     print('Email do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta2 == '4':
+                     pacientes[nome]['data_nascimento'] = input('Nova data de nascimento: ')
+                     print('Data de nascimento do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta2 == '5':
+                     pacientes[nome]['peso'] = input('Novo peso: ')
+                     print('Peso do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta2 == '6':
+                     pacientes[nome]['objetivo'] = input('Novo objetivo: ')
+                     print('Objetivo do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta2 == '0':
+                     print()
+               
+            else:
+               print('Paciente não encontrado')      
+   
+         elif resposta1 == '4':
             print()
-            print('{} não se encontra nos pacientes cadastrados no sistema'.format(nome))
+            print('Remoção de paciente do sistema')
             print()
-      
-      elif resposta1 == '3':
-         print()
-         print('Atualização de cadastro de paciente no sistema')
-         print()
-         nome = input('Qual o nome do paciente que você deseja atualizar? ')
-         tamanho = len(lista_nomes)
-         posicao = 0
-         achou = False
-         while (posicao < tamanho) and (not achou):
-          if nome == lista_nomes[posicao]:
-            achou = True
-          else:
-            posicao += 1
-         if achou:
-           del lista_nomes[posicao]
-           del lista_telefones[posicao]
-           del lista_dia_nasc[posicao]
-           del lista_emails[posicao]
-           del lista_peso[posicao]
-           del lista_obj[posicao]
-           nome  = input('Nome do paciente atualizado: ')
-           telefone  = input('Telefone atualizado: ')
-           email = input('E-mail atualizado: ')
-           dia_nasc = input('Data de nascimento atualizada: ')
-           peso = input('Peso do paciente em kg atualizado: ')
-           obj = input('Objetivo do paciente atualizado: ')
-           lista_nomes += [nome]
-           lista_telefones += [telefone]
-           lista_dia_nasc += [dia_nasc]
-           lista_emails += [email]
-           lista_peso += [peso]
-           lista_obj += [obj]
-           print()
-           print('Os dados do paciente foram atualizados com sucesso!')
-           print()
+            nome = input('Qual o nome do paciente que deseja remover? ').lower()
+            print()
+
+            if nome in pacientes:
+               del pacientes[nome]
+               print('Paciente removido com sucesso!')
+               print()
+            
+            else:
+               print('Paciente não encontrado.')
+               print()
            
-  
-      elif resposta1 == '4':
-         print()
-         print('Remoção de paciente do sistema')
-         print()
-         nome = input('Qual o nome do paciente que você deseja remover? ')
-         tamanho = len(lista_nomes)
-         posicao = 0
-         achou = False
-         while (posicao < tamanho) and (not achou):
-          if nome == lista_nomes[posicao]:
-            achou = True
-          else:
-            posicao += 1
-         if achou:
-           del lista_nomes[posicao]
-           del lista_telefones[posicao]
-           del lista_dia_nasc[posicao]
-           del lista_emails[posicao]
-           del lista_peso[posicao]
-           del lista_obj[posicao]
-           print()
-           print('Os dados do paciente foram removidos com sucesso!')
-           print()
-           
-      elif resposta1 == '0':
-         print()
-  
-  elif resposta == '2':
+         elif resposta1 == '0':
+            print()
+   
+   elif resposta == '2':
     print('#############################################################################################')
     print('##  Este é o mais novo NutriPlan AI!                                                    #####')
     print('##                                                                                      #####')
@@ -257,11 +259,147 @@ while resposta != '0':
             print('você matenha sua massa muscular e matenha seu peso com qualidade.')
             print('Logo, as calorias que suas dieta deve ter são {:.2f}!'''.format(kcal_dieta))
             print()
+   
+   elif resposta == '3':
 
-  elif resposta == '0':
-    print()
-  
-  else:
+##### Ajeitar variáveis respostas #####
+      resposta3 = ''
+      while resposta != '0':
+         print('####################################################')
+         print('##  O que você quer fazer?            ##############')
+         print('##  Selecione uma das opções a seguir ##############')
+         print('##  1 - Cadastrar consulta            ##')
+         print('##  2 - Informações sobre consulta    ##')
+         print('##  3 - Atualizar consulta            ##')
+         print('##  4 - Excluir consulta              ##')
+         print('##  0 - Voltar ao menu principal      ##')
+         resposta = input('## Escolha a sua opcão: ')
+
+         if resposta == '1':
+            print()
+            print('Cadastro de paciente no sistema')
+            print()
+            nome = input('Nome do paciente: ').lower()
+            telefone = input('Telefone: ')
+            email = input('E-mail: ')
+            data_nascimento = input('Data de nascimento: ')
+            peso = input('Peso do paciente em kg: ')
+            objetivo = input('Objetivo do paciente: ')
+            dia_consulta = input('Dia da consulta: ')
+            consultas[nome] = {
+               'telefone': telefone,
+               'email': email,
+               'data_nascimento': data_nascimento,
+               'peso': peso,
+               'objetivo': objetivo,
+               'dia_consulta': dia_consulta
+            }
+            print('Consulta cadastrada com sucesso!')
+            print()
+         
+         elif resposta == '2':
+            print()
+            print('Informações da consulta no sistema')
+            print()
+            nome = input('Qual o nome do paciente? ').lower()
+            
+            if nome in consultas:
+               print('Nome:', nome.title())
+               print('Telefone:', consultas[nome]['telefone'])
+               print('Email:', consultas[nome]['email'])
+               print('Data de nascimento:', consultas[nome]['data_nascimento'])
+               print('Peso:', consultas[nome]['peso'])
+               print('Objetivo:', consultas[nome]['objetivo'])
+               print('Dia da consulta:', consultas[nome]['dia_consulta'])
+               print()
+            else:
+               print('Paciente não encontrado.')
+               print()
+
+         elif resposta == '3':
+            print()
+            print('Atualização de cadastro de paciente no sistema')
+            print()
+            nome = input('Qual o nome do paciente que deseja atualizar? ').lower()
+            if nome in consultas:
+               resposta4 = ''
+               while resposta != '0':
+                  print('####################################################')
+                  print('##  O que você quer atualizar?            ##########')
+                  print('##  Selecione uma das opções a seguir ##############')
+                  print('##  1 - Nome do paciente                          ##')
+                  print('##  2 - Telefone do paciente                      ##')
+                  print('##  3 - Email do paciente                         ##')
+                  print('##  4 - Data de nascimento do paciente            ##')
+                  print('##  5 - Peso do paciente                          ##')
+                  print('##  6 - Objetivo do paciente                      ##')
+                  print('##  7 - Dia da consulta                           ##')
+                  print('##  0 - Voltar ao menu das consultas              ##')
+                  resposta = input('## Escolha a sua opção: ')
+
+                  if resposta == '1':
+                     novo_nome = input('Novo nome do paciente: ').lower()
+                     pacientes[novo_nome] = pacientes[nome]
+                     del pacientes[nome]
+                     nome = novo_nome
+                     print('Nome do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta == '2':
+                     consultas[nome]['telefone'] = input('Novo telefone: ')
+                     print('Telefone do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta == '3':
+                     consultas[nome]['email'] = input('Novo Email: ')
+                     print('Email do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta == '4':
+                     consultas[nome]['data_nascimento'] = input('Nova data de nascimento: ')
+                     print('Data de nascimento do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta == '5':
+                     consultas[nome]['peso'] = input('Novo peso: ')
+                     print('Peso do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta == '6':
+                     consultas[nome]['objetivo'] = input('Novo objetivo: ')
+                     print('Objetivo do paciente atualizado com sucesso!')
+                     print()
+                  
+                  elif resposta == '7':
+                     consultas[nome]['dia_consulta'] = input('Novo dia da consulta: ')
+                     print('Consulta do paciente atualizada com sucesso!')
+                     print()
+                  
+                  elif resposta == '0':
+                     print()
+
+         elif resposta == '4':
+            print()
+            print('Remoção de consulta do sistema')
+            print()
+            nome = input('Qual o nome do paciente que deseja remover a consulta? ').lower()
+
+            if nome in consultas:
+               del consultas[nome]
+               print('consulta removida com sucesso!')
+               print()
+            
+            else:
+               print('Paciente não encontrado.')
+               print()
+
+         elif resposta == '0':
+            print()
+   
+   elif resposta == '0':
+      print()
+   
+   else:
      print()
      print('Opção inválida, escolha alguma da opções de 1 a 5!')
      print()
