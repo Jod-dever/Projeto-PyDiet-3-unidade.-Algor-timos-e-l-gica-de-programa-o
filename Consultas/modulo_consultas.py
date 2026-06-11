@@ -10,9 +10,9 @@ def moduloconsultas(consultas):
         print('##  4 - Excluir consulta                ##')
         print('##  0 - Voltar ao menu principal        ##')
         resposta_con = input('## Escolha a sua opcão: ')
+        print()
 
         if resposta_con == '1':
-            print()
             print('Cadastro de paciente no sistema')
             print()
             nome = input('Nome do paciente: ').lower()
@@ -30,7 +30,6 @@ def moduloconsultas(consultas):
             print()
          
         elif resposta_con == '2':
-            print()
             print('Informações da consulta no sistema')
             print()
             nome = input('Qual o nome do paciente? ').lower()
@@ -47,7 +46,6 @@ def moduloconsultas(consultas):
                 print()
 
         elif resposta_con == '3':
-            print()
             print('Atualização de cadastro de paciente no sistema')
             print()
             nome = input('Qual o nome do paciente que deseja atualizar? ').lower()
@@ -102,7 +100,6 @@ def moduloconsultas(consultas):
                         print()
 
         elif resposta_con == '4':
-            print()
             print('Remoção de consulta do sistema')
             print()
             nome = input('Qual o nome do paciente que deseja remover a consulta? ').lower()
