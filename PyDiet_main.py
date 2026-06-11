@@ -4,6 +4,7 @@ from Dicionarios.modulo_dicionarios import dicionarios_pacientes,dicionario_cons
 from Pacientes.modulo_pacientes import modulopacientes
 from Consultas.modulo_consultas import moduloconsultas
 from Nutriplan_AI.nutriplanAI_imc import imc
+from Nutriplan_AI.nutriplanAI_mtb_e_get import mtb_get
 
 pacientes = dicionarios_pacientes()
 consultas = dicionario_consultas()
@@ -48,6 +49,8 @@ while resposta != '0':
             if resposta_nu == '1':
                 imc(pacientes)
 
+            elif resposta_nu == '2':
+                mtb_get(pacientes)
     
     elif resposta == '0':
         print('###################################')
