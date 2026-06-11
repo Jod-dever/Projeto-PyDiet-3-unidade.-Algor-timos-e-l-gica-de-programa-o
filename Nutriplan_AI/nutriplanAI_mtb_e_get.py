@@ -98,5 +98,6 @@ def mtb_get (pacientes):
             print()
 
         else:
-            print('Resposta inválida!')
+            print('Opção inválida, escolha alguma da opções de 0 a 2!')
+            print()
 
