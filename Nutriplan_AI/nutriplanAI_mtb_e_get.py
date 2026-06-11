@@ -16,7 +16,7 @@ def mtb_get (pacientes):
             print()
               
             if pacientes[nome]['sexo'] == 'masculino':
-                tmb = (float(pacientes[nome]['peso']) * 13.75) + (float(pacientes[nome]['altura']) * 5.003 * 100) - (int(pacientes[nome]['idade']) * 6.75) + 66.5
+                tmb = (float(pacientes[nome]['peso']) * 13.75) + (float(pacientes[nome]['altura']) * 500.3) - (int(pacientes[nome]['idade']) * 6.75) + 66.5
                 if pacientes[nome]['nivel_atv'] == '1':
                     get = tmb * 1.2
                     print('A taxa de metabolismo basal do paciente {} é de {:.2f} e já que '.format(nome,tmb))
@@ -53,7 +53,7 @@ def mtb_get (pacientes):
                     print()
                         
             elif pacientes[nome]['sexo'] == 'feminino':
-                tmb = (float(pacientes[nome]['peso']) * 9.563) + (float(pacientes[nome]['altura']) * 1.85 * 100) - (int(pacientes[nome]['idade']) * 4.676) + 665.1
+                tmb = (float(pacientes[nome]['peso']) * 9.563) + (float(pacientes[nome]['altura']) * 185) - (int(pacientes[nome]['idade']) * 4.676) + 665.1
                 if pacientes[nome]['nivel_atv'] == '1':
                     get = tmb * 1.2
                     print('A taxa de metabolismo basal do paciente {} é de {:.2f} e já que '.format(nome,tmb))
@@ -94,7 +94,7 @@ def mtb_get (pacientes):
             print()
             peso = float(input('Digite o peso do paciente em quilogramas(kg): '))
             print()
-            altura = int(input('Qual a altura do paciente em metros(m): '))
+            altura = float(input('Qual a altura do paciente em metros(m): '))
             print()
             sexo = input('Qual o gênero do paciente (m/f): ')
             print()
@@ -109,7 +109,7 @@ def mtb_get (pacientes):
             print()
 
             if sexo in ['M','m']:
-                tmb = 66.5 + (13.75 * peso) + (5.003 * altura) - (6.75 * idade) 
+                tmb = 66.5 + (13.75 * peso) + (500.3 * altura) - (6.75 * idade) 
                 if nivel_atv == '1':
                     get = tmb * 1.2
                     print('A taxa de metabolismo basal do paciente é de {:.2f} e já que '.format(tmb))
@@ -146,7 +146,7 @@ def mtb_get (pacientes):
                     print()
 
             elif sexo in ['F','f']:
-                tmb = 655.1 + (9.563 * peso) + (1.85 * altura) - (4.676 * idade)
+                tmb = 655.1 + (9.563 * peso) + (185 * altura) - (4.676 * idade)
                 if nivel_atv == '1':
                     get = tmb * 1.2
                     print('A taxa de metabolismo basal do paciente é de {:.2f} e já que '.format(tmb))

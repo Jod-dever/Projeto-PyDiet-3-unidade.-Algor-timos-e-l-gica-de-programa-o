@@ -38,8 +38,8 @@ while resposta != '0':
             print('##############################################################################')
             print('##  O que você quer fazer?                                                  ##')
             print('##  Selecione uma das opções a seguir                                       ##')
-            print('##  1 - Cálculo de IMC                                                      ##') ### resposta4 ###
-            print('##  2 - Cáculo de metabolismo basal (TMB) e gasto energético total (GET)    ##') ### resposta5 ###
+            print('##  1 - Cálculo de IMC                                                      ##')
+            print('##  2 - Cáculo de metabolismo basal (TMB) e gasto energético total (GET)    ##') 
             print('##  3 - Cálculo de percentual de gordura corporal                           ##')
             print('##  4 - Planejamento de dieta                                               ##')
             print('##  0 - Voltar ao menu principal                                            ##')
