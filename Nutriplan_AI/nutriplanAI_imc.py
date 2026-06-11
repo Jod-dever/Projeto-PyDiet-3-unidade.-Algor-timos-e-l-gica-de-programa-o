@@ -7,7 +7,7 @@ def imc (pacientes):
         print('##  Selecione uma das opções a seguir                                       ##')
         print('##  1 - Cálculo para paciente já cadastrado                                 ##')
         print('##  2 - Consulta rápida                                                     ##')
-        print('##  0 - Voltar ao menu principal                                            ##')
+        print('##  0 - Voltar ao menu do Nutriplan AI                                      ##')
         resposta_imc = input('## Escolha a sua opcão: ')
         print()
                 
