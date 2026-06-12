@@ -5,6 +5,8 @@ from Pacientes.modulo_pacientes import modulopacientes
 from Consultas.modulo_consultas import moduloconsultas
 from Nutriplan_AI.nutriplanAI_imc import imc
 from Nutriplan_AI.nutriplanAI_mtb_e_get import mtb_get
+from Nutriplan_AI.nutripanAI_per_gordura import bodyfat
+
 
 pacientes = dicionarios_pacientes()
 consultas = dicionario_consultas()
@@ -58,6 +60,10 @@ while resposta != '0':
 
             elif resposta_nu == '2':
                 mtb_get(pacientes)
+
+            elif resposta_nu == '3':
+                bodyfat(pacientes)
+
 
             elif resposta_nu == '0':
                 print()

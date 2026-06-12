@@ -8,8 +8,8 @@ def dicionarios_pacientes():
             'altura': '1.75',
             'peso': '93.3',
             'sexo': 'masculino',
-            'circ_pesc': '36',
-            'circ_cint': '73,5',
+            'circ_pesc': '35',
+            'circ_cint': '80',
             'circ_quad': '85',
             'nivel_atv': '3',
             'objetivo': 'ganho de massa muscular'
@@ -37,12 +37,12 @@ def dicionarios_pacientes():
             'peso': '60.2',
             'sexo': 'feminino',
             'circ_pesc': '32',
-            'circ_cint': '67',
-            'circ_quad': '92',
-            'nivel_atv': '',
+            'circ_cint': '66',
+            'circ_quad': '88',
+            'nivel_atv': '3',
             'objetivo': 'manter o peso'
         }
-    }
+    } 
     return pacientes
 
 def dicionario_consultas():
