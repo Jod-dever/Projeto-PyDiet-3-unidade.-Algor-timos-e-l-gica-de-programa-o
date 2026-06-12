@@ -1,4 +1,4 @@
-def idade_pac ():
+def idade_pac (data_nascimento):
     from datetime import datetime
 
     nascimento = datetime.strptime(data_nascimento, '%d/%m/%Y')
