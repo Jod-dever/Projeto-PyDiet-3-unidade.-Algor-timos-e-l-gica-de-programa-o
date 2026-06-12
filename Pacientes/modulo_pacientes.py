@@ -81,7 +81,23 @@ def modulopacientes(pacientes):
                 print('Telefone:', pacientes[nome]['telefone'])
                 print('Email:', pacientes[nome]['email'])
                 print('Data de nascimento:', pacientes[nome]['data_nascimento'])
+                print('idade:', pacientes[nome]['idade'])
+                print('altura:', pacientes[nome]['altura'])
                 print('Peso:', pacientes[nome]['peso'])
+                print('Gênero:', pacientes[nome]['sexo'])
+                print('Circunferência do pescoço:', pacientes[nome]['circ_pesc'])
+                print('Circunferência da cintura:', pacientes[nome]['circ_cint'])
+                print('Circunferência do quadril:', pacientes[nome]['circ_quad'])
+                if pacientes[nome]['nivel_atv'] == '1':
+                    print('Sedentário')
+                elif pacientes[nome]['nivel_atv'] == '2':
+                    print('Levemente ativo')
+                elif pacientes[nome]['nivel_atv'] == '3':
+                    print('Moderadamente ativo')
+                elif pacientes[nome]['nivel_atv'] == '4':
+                    print('Muito ativo')
+                elif pacientes[nome]['nivel_atv'] == '5':
+                    print('Extremamente ativo')               
                 print('Objetivo:', pacientes[nome]['objetivo'])
                 print()
             else:
