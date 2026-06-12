@@ -53,6 +53,7 @@ def imc (pacientes):
                 
         elif resposta_imc == '2':
             peso = float(input('informe o peso em kg: '))
+            print()
             altura = float(input('informa a altura em metros: '))
             imc = peso/(altura**2)
             print()

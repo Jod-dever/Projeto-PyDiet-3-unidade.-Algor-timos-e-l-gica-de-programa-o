@@ -37,5 +37,40 @@ def bodyfat(pacientes):
                     print()
 
             else:
-                print('Paciente não encontrado!')        
-                                                                          
+                print('Paciente não encontrado!') 
+
+        elif resposta_bf == '2':
+            altura = float(input('Qual a altura do paciente em metros(m): '))
+            print()
+            circ_pesc = float(input('Digite a circunferência do pescoço do paciente em centímetros(cm): '))
+            print()
+            circ_cint = float(input('Digite a circunferência da cintura do paciente em centímetros(cm): '))
+            print()
+            circ_quad = float(input('Qual a circunferência do quadril do paciente em centímetrso(cm): '))
+            print()
+            sexo = input('Qual o gênero do paciente (m/f): ').lower()
+            print()
+
+            if sexo == 'm':
+                cintura = circ_cint / 2.54
+                pescoco =  circ_pesc / 2.54
+                altura = (altura * 100) / 2.54
+                perc_bf = 86.010 * log10(cintura - pescoco) - 70.041 * log10(altura) + 36.76
+                print('O percentual de gordura do paciente é de {:.1f}!'.format(perc_bf))
+                print()
+
+            elif sexo == 'f':
+                cintura = circ_cint / 2.54
+                pescoco = circ_pesc / 2.54
+                quadril = circ_quad / 2.54
+                altura = (altura * 100) / 2.54
+                perc_bf = 163.205 * log10(cintura + quadril - pescoco) - 97.684 * log10(altura) - 78.387 
+                print('O percentual de gordura do paciente é de {:.1f}!'.format(perc_bf))
+                print()
+
+        elif resposta_bf == '0':
+            print()
+
+        else:
+            print('Opção inválida, escolha alguma da opções de 0 a 2!')
+            print()
