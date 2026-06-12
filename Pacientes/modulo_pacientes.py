@@ -1,4 +1,4 @@
-from Pacientes.script_idade import idade_pac
+from datetime import datetime
 
 def modulopacientes(pacientes):
     resposta_pac = ''  
@@ -24,8 +24,11 @@ def modulopacientes(pacientes):
             email = input('E-mail: ')
             print()
             data_nascimento = input('Data de nascimento (dd/mm/aaaa): ')
-            print()
-            idade = idade_pac()
+            nascimento = datetime.strptime(data_nascimento, '%d/%m/%Y')
+            hoje = datetime.today()
+            idade = hoje.year - nascimento.year
+            if (hoje.month, hoje.day) < (nascimento.month, nascimento.day):
+                idade -= 1
             print()
             altura = input('Altura do paciente em metros (m):') 
             print()
