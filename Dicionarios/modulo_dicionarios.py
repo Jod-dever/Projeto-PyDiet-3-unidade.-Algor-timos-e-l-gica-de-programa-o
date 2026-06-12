@@ -8,8 +8,11 @@ def dicionarios_pacientes():
             'altura': '1.75',
             'peso': '93.3',
             'sexo': 'masculino',
+            'circ_pesc': '36',
+            'circ_cint': '73,5',
+            'circ_quad': '85',
             'nivel_atv': '3',
-            'objetivo': 'emagrecimento'
+            'objetivo': 'ganho de massa muscular'
         },
         'josé': {
             'telefone': '99999-2222',
@@ -19,6 +22,9 @@ def dicionarios_pacientes():
             'altura': '1.75',
             'peso': '98',
             'sexo': 'masculino',
+            'circ_pesc': '38',
+            'circ_cint': '87',
+            'circ_quad': '97',
             'nivel_atv': '3',
             'objetivo': 'emagrecimento'
         },
@@ -27,11 +33,14 @@ def dicionarios_pacientes():
             'email': 'mariaclara@ufrn.edu.br',
             'data_nascimento': '01/12/2007',
             'idade': '18',
-            'altura': '1.59',
+            'altura': '1.60',
             'peso': '60.2',
             'sexo': 'feminino',
-            'nivel_atv': '3',
-            'objetivo': 'ganho de massa muscular'
+            'circ_pesc': '32',
+            'circ_cint': '67',
+            'circ_quad': '92',
+            'nivel_atv': '',
+            'objetivo': 'manter o peso'
         }
     }
     return pacientes

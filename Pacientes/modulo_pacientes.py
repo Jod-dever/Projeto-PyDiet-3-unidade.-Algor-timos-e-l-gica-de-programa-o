@@ -1,3 +1,5 @@
+from Pacientes.script_idade import idade_pac
+
 def modulopacientes(pacientes):
     resposta_pac = ''  
     while resposta_pac != '0':
@@ -16,16 +18,53 @@ def modulopacientes(pacientes):
             print('Cadastro de paciente no sistema')
             print()
             nome = input('Nome do paciente: ').lower()
+            print()
             telefone = input('Telefone: ')
+            print()
             email = input('E-mail: ')
-            data_nascimento = input('Data de nascimento: ')
-            peso = input('Peso do paciente em kg: ')
+            print()
+            data_nascimento = input('Data de nascimento (dd/mm/aaaa): ')
+            print()
+            idade = idade_pac()
+            print()
+            altura = input('Altura do paciente em metros (m):') 
+            print()
+            peso = input('Peso do paciente em quilogramas (kg): ')
+            print()
+            sexo = input('Gênero do paciente (Masculino/Feminino): ').lower()
+            print()
+            circ_pesc = input('Circunferência do pescoço do paciente em centímetros (cm):')
+            print()
+            circ_cint = input('Circunferência da cintura do paciente em centímetros (cm):')
+            print()
+            circ_quad = input('Circunferência do quadril do paciente em centímetros (cm):')
+            print()
+            print('### qual o nível de atividade física do paciente ###')
+            print('##  1 - Sedentário -> pouco ou nenhum exercício                                   ##')
+            print('##  2 - Levemente ativo -> exercício leve ou atividade leve diária                ##')
+            print('##  3 - Moderadamente ativo -> exercício moderado ou atividade moderada diária    ##')
+            print('##  4 - Muito ativo -> exercício intenso ou atividade intensa diária              ##')
+            print('##  5 - Extremamente ativo -> exercício muito intenso ou trabalho físico pesado   ##')
+            nivel_atv = input('Escolha uma das opções: ') 
+            print()
+            print('### qual o objetivo do paciente?  ##')
+            print('##  Emagrecimento                 ##')
+            print('##  Ganho de massa muscular       ##')
+            print('##  Manter o peso                 ##')
             objetivo = input('Objetivo do paciente: ')
+            print()
             pacientes[nome] = {
                'telefone': telefone,
                'email': email,
                'data_nascimento': data_nascimento,
+               'idade': idade,
+               'altura': altura,
                'peso': peso,
+               'sexo': sexo,
+               'circ_pesc': circ_pesc,
+               'circ_cint': circ_cint,
+               'circ_quad': circ_quad,
+               'nivel_atv': nivel_atv,
                'objetivo': objetivo
             }
             print('Paciente cadastrado com sucesso!')
