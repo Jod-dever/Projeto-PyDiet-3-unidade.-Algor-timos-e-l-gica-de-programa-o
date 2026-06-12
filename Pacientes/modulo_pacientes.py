@@ -30,17 +30,17 @@ def modulopacientes(pacientes):
             if (hoje.month, hoje.day) < (nascimento.month, nascimento.day):
                 idade -= 1
             print()
-            altura = input('Altura do paciente em metros (m):') 
+            altura = input('Altura do paciente em metros (m): ') 
             print()
             peso = input('Peso do paciente em quilogramas (kg): ')
             print()
             sexo = input('Gênero do paciente (Masculino/Feminino): ').lower()
             print()
-            circ_pesc = input('Circunferência do pescoço do paciente em centímetros (cm):')
+            circ_pesc = input('Circunferência do pescoço do paciente em centímetros (cm): ')
             print()
-            circ_cint = input('Circunferência da cintura do paciente em centímetros (cm):')
+            circ_cint = input('Circunferência da cintura do paciente em centímetros (cm): ')
             print()
-            circ_quad = input('Circunferência do quadril do paciente em centímetros (cm):')
+            circ_quad = input('Circunferência do quadril do paciente em centímetros (cm): ')
             print()
             print('### qual o nível de atividade física do paciente ###')
             print('##  1 - Sedentário -> pouco ou nenhum exercício                                   ##')
@@ -56,6 +56,33 @@ def modulopacientes(pacientes):
             print('##  Manter o peso                 ##')
             objetivo = input('Objetivo do paciente: ')
             print()
+            quant_proteinas = input('Gramas de proteína por quilograma (kg) do paciente para a dieta: ')
+            print()
+            if sexo == 'masculino':
+                tmb = (float(peso) * 13.75) + (float(altura) * 5.003) - (int(idade) * 6.75) + 66.5
+                if nivel_atv == '1':
+                    get = tmb * 1.2
+                elif nivel_atv == '2':
+                    get = tmb * 1.375
+                elif nivel_atv == '3':
+                    get = tmb * 1.55
+                elif nivel_atv == '4':
+                    get = tmb * 1.725
+                elif nivel_atv == '5':
+                    get = tmb * 1.9
+            elif sexo == 'feminino':
+                tmb = (float(peso) * 9.563) + (float(altura) * 1.85) - (int(idade) * 4.676) + 665.1
+                if nivel_atv == '1':
+                    get = tmb * 1.2
+                elif nivel_atv == '2':
+                    get = tmb * 1.375
+                elif nivel_atv == '3':
+                    get = tmb * 1.55
+                elif nivel_atv == '4':
+                    get = tmb * 1.725
+                elif nivel_atv == '5':
+                    get = tmb * 1.9
+
             pacientes[nome] = {
                'telefone': telefone,
                'email': email,
@@ -68,7 +95,9 @@ def modulopacientes(pacientes):
                'circ_cint': circ_cint,
                'circ_quad': circ_quad,
                'nivel_atv': nivel_atv,
-               'objetivo': objetivo
+               'objetivo': objetivo,
+               'quant_proteinas': quant_proteinas,
+               'get': get
             }
             print('Paciente cadastrado com sucesso!')
             print()

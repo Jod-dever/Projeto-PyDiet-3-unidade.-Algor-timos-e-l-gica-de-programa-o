@@ -1,6 +1,6 @@
 ##### Um sistema de planejamento de dieta #####
 
-from Dicionarios.modulo_dicionarios import dicionarios_pacientes,dicionario_consultas
+from Dicionarios.modulo_dicionarios import dicionarios_pacientes,dicionario_consultas,dicionario_alimentos
 from Pacientes.modulo_pacientes import modulopacientes
 from Consultas.modulo_consultas import moduloconsultas
 from Nutriplan_AI.nutriplanAI_imc import imc
@@ -10,6 +10,7 @@ from Nutriplan_AI.nutripanAI_per_gordura import bodyfat
 
 pacientes = dicionarios_pacientes()
 consultas = dicionario_consultas()
+alimentos = dicionario_alimentos()
 
 resposta = ''
 
