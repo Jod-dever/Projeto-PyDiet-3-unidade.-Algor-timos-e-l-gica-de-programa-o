@@ -96,7 +96,7 @@ def mtb_get (pacientes):
             print()
             altura = float(input('Qual a altura do paciente em metros(m): '))
             print()
-            sexo = input('Qual o gênero do paciente (m/f): ')
+            sexo = input('Qual o gênero do paciente (m/f): ').lower()
             print()
 
             print('### qual o nível de atividade física do paciente ###')
@@ -108,7 +108,7 @@ def mtb_get (pacientes):
             nivel_atv = input('Escolha uma das opções: ')
             print()
 
-            if sexo in ['M','m']:
+            if sexo in ['m']:
                 tmb = 66.5 + (13.75 * peso) + (500.3 * altura) - (6.75 * idade) 
                 if nivel_atv == '1':
                     get = tmb * 1.2
@@ -145,7 +145,7 @@ def mtb_get (pacientes):
                     print('trabalho físico pesado diário, o seu gasto energético total é de {:.2f}.'.format(get))
                     print()
 
-            elif sexo in ['F','f']:
+            elif sexo in ['f']:
                 tmb = 655.1 + (9.563 * peso) + (185 * altura) - (4.676 * idade)
                 if nivel_atv == '1':
                     get = tmb * 1.2
