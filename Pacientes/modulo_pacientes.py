@@ -117,7 +117,7 @@ def modulopacientes(pacientes):
                 elif pacientes[nome]['nivel_atv'] == '5':
                     print('Extremamente ativo')
                     print()               
-                print('Objetivo:', pacientes[nome]['objetivo'])
+                print('Objetivo:', pacientes[nome]['objetivo'].tittle())
                 print()
             else:
                 print('Paciente não encontrado.')
