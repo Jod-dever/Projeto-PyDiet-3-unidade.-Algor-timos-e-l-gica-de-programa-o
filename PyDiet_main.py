@@ -1,6 +1,6 @@
 ##### Um sistema de planejamento de dieta #####
 
-from Dicionarios.modulo_dicionarios import dicionarios_pacientes,dicionario_consultas,dicionario_alimentos
+from Dicionarios.modulo_dicionarios import dicionarios_pacientes,dicionario_consultas
 from Pacientes.modulo_pacientes import modulopacientes
 from Consultas.modulo_consultas import moduloconsultas
 from Nutriplan_AI.nutriplanAI_imc import imc
@@ -10,7 +10,6 @@ from Nutriplan_AI.nutripanAI_per_gordura import bodyfat
 
 pacientes = dicionarios_pacientes()
 consultas = dicionario_consultas()
-alimentos = dicionario_alimentos()
 
 resposta = ''
 
@@ -51,7 +50,6 @@ while resposta != '0':
             print('##  1 - Cálculo de IMC                                                                     ##')
             print('##  2 - Cáculo de metabolismo basal (TMB) e gasto energético total (GET)                   ##') 
             print('##  3 - Cálculo de percentual de gordura corporal                                          ##')
-            print('##  4 - Planejamento de dieta                                                              ##')
             print('##  0 - Voltar ao menu principal                                                           ##')
             resposta_nu = input('## Escolha a sua opcão: ')
             print()
@@ -64,7 +62,6 @@ while resposta != '0':
 
             elif resposta_nu == '3':
                 bodyfat(pacientes)
-
 
             elif resposta_nu == '0':
                 print()
