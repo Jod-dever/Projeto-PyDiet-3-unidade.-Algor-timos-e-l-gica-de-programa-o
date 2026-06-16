@@ -73,20 +73,18 @@ def salvar_pacientes(pacientes):
 
         arq.write(
             nome + ';' +
-            pacientes[nome]['telefone'] + ';' +
-            pacientes[nome]['email'] + ';' +
-            pacientes[nome]['data_nascimento'] + ';' +
-            pacientes[nome]['idade'] + ';' +
-            pacientes[nome]['altura'] + ';' +
-            pacientes[nome]['peso'] + ';' +
-            pacientes[nome]['sexo'] + ';' +
-            pacientes[nome]['circ_pesc'] + ';' +
-            pacientes[nome]['circ_cint'] + ';' +
-            pacientes[nome]['circ_quad'] + ';' +
-            pacientes[nome]['nivel_atv'] + ';' +
-            pacientes[nome]['objetivo'] + ';' +
-            pacientes[nome]['quant_proteinas'] + ';' +
-            pacientes[nome]['get'] +
+            str(pacientes[nome]['telefone']) + ';' +
+            str(pacientes[nome]['email']) + ';' +
+            str(pacientes[nome]['data_nascimento']) + ';' +
+            str(pacientes[nome]['idade']) + ';' +
+            str(pacientes[nome]['altura']) + ';' +
+            str(pacientes[nome]['peso']) + ';' +
+            str(pacientes[nome]['sexo']) + ';' +
+            str(pacientes[nome]['circ_pesc']) + ';' +
+            str(pacientes[nome]['circ_cint']) + ';' +
+            str(pacientes[nome]['circ_quad']) + ';' +
+            str(pacientes[nome]['nivel_atv']) + ';' +
+            str(pacientes[nome]['objetivo']) +
             '\n'
         )
 

@@ -1,14 +1,15 @@
 ##### Um sistema de planejamento de dieta #####
 
 from Dicionarios.txt_dicionarios import salvar_pacientes,salvar_consultas,carregar_pacientes,carregar_consultas
+from Dicionarios.modulo_dicionarios import dicionario_pacientes,dicionario_consultas
 from Pacientes.modulo_pacientes import modulopacientes
 from Consultas.modulo_consultas import moduloconsultas
 from Nutriplan_AI.nutriplanAI_imc import imc
 from Nutriplan_AI.nutriplanAI_mtb_e_get import mtb_get
 from Nutriplan_AI.nutripanAI_per_gordura import bodyfat
 
-pacientes = carregar_pacientes()
-consultas = carregar_consultas()
+pacientes = carregar_pacientes(dicionario_pacientes)
+consultas = carregar_consultas(dicionario_consultas)
 
 resposta = ''
 
