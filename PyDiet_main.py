@@ -1,15 +1,14 @@
 ##### Um sistema de planejamento de dieta #####
 
-from Dicionarios.modulo_dicionarios import dicionarios_pacientes,dicionario_consultas
+from Dicionarios.txt_dicionarios import salvar_pacientes,salvar_consultas,carregar_pacientes,carregar_consultas
 from Pacientes.modulo_pacientes import modulopacientes
 from Consultas.modulo_consultas import moduloconsultas
 from Nutriplan_AI.nutriplanAI_imc import imc
 from Nutriplan_AI.nutriplanAI_mtb_e_get import mtb_get
 from Nutriplan_AI.nutripanAI_per_gordura import bodyfat
 
-
-pacientes = dicionarios_pacientes()
-consultas = dicionario_consultas()
+pacientes = carregar_pacientes()
+consultas = carregar_consultas()
 
 resposta = ''
 
@@ -71,6 +70,10 @@ while resposta != '0':
                 print()
     
     elif resposta == '0':
+        
+        salvar_pacientes(pacientes)
+        salvar_consultas(consultas)
+
         print('###################################')
         print('## Fim do programa               ##')
         print('## Obrigado por usar o PyDiet!   ##')

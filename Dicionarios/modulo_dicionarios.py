@@ -1,4 +1,4 @@
-def dicionarios_pacientes():
+def dicionario_pacientes():
     pacientes = {
         'joão augusto': {
             'telefone': '99999-1111',
@@ -12,9 +12,7 @@ def dicionarios_pacientes():
             'circ_cint': '80',
             'circ_quad': '85',
             'nivel_atv': '3',
-            'objetivo': 'ganho de massa muscular',
-            'quant_proteinas': '2.2',
-            'get': '3239.35'
+            'objetivo': 'ganho de massa muscular'
         },
         'josé': {
             'telefone': '99999-2222',
@@ -28,9 +26,7 @@ def dicionarios_pacientes():
             'circ_cint': '87',
             'circ_quad': '97',
             'nivel_atv': '3',
-            'objetivo': 'emagrecimento',
-            'quant_proteinas': '2',
-            'get': '3360.44'
+            'objetivo': 'emagrecimento'
         },
         'maria clara': {
             'telefone': '99999-6666',
@@ -44,9 +40,7 @@ def dicionarios_pacientes():
             'circ_cint': '66',
             'circ_quad': '88',
             'nivel_atv': '3',
-            'objetivo': 'manter o peso',
-            'quant_proteinas': '1.5',
-            'get': '2251.57'
+            'objetivo': 'manter o peso'
         }
     } 
     return pacientes
